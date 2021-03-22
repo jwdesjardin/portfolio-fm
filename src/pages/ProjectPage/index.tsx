@@ -1,8 +1,9 @@
 import * as React from 'react'
-import { Text, Container } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
+import { Greeting } from './Greeting'
 
 export const ProjectPage = () => (
-  <Container>
-    <Text>Project Page</Text>
-  </Container>
+  <Box>
+    <Greeting></Greeting>
+  </Box>
 )
