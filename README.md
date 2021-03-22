@@ -8,62 +8,62 @@ npx create-react-app client --template @chakra-ui/typescript
 
 ## screens
 
-- [o] home/project page
-- [o] aboutMe/contact page
+- [_] home/project page
+- [_] aboutMe/contact page
 
 ## animations
 
-- [o] menu
-  - [o] stagger children
-  - [o] dropdown pullup
-- [o] home
-  - [o] fade in / fade out
-  - [o] path animation
-- [o] project card
-  - [o] animate layout
-  - [o] animate prescence modal
-- [o] image slideshow
-  - [o] animate precense images
-  - [o] buttons hover click
-- [o] links / icons hover and click
+- [_] menu
+  - [_] stagger children
+  - [_] dropdown pullup
+- [_] home
+  - [_] fade in / fade out
+  - [_] path animation
+- [_] project card
+  - [_] animate layout
+  - [_] animate prescence modal
+- [_] image slideshow
+  - [_] animate precense images
+  - [_] buttons hover click
+- [_] links / icons hover and click
 
 ## components
 
-- [o] home/project page
+- [_] home/project page
 
   - [x] greeting
-  - [o] recent projects
-    - [o] layout header
-    - [o] project
-      - [o] header / links
-      - [o] title
-      - [o] image slideshow
-      - [o] description
-      - [o] tech-stack
-        - [o] circle-button
-        - [o] modals
-  - [o] layout page-links
+  - [x] recent projects
+    - [x] layout header
+    - [x] project
+      - [x] header / links
+      - [x] title
+      - [x] image slideshow
+      - [x] description
+      - [x] tech-stack
+        - [x] circle-button
+        - [_] modals
+  - [_] layout page-links
 
-- [o] aboutMe/contact page
+- [_] aboutMe/contact page
 
-  - [o] title
-  - [o] layout header (shared)
-  - [o] paragraph text
-  - [o] profile image
-  - [o] get in touch
-    - [o] contact links
-  - [o] layout page-links (shared)
+  - [_] title
+  - [_] layout header (shared)
+  - [_] paragraph text
+  - [_] profile image
+  - [_] get in touch
+    - [_] contact links
+  - [_] layout page-links (shared)
 
-- [o] menu
-  - [o] hamburger button
-    - [o] dropdown box
-      - [o] links
+- [_] menu
+  - [_] hamburger button
+    - [_] dropdown box
+      - [_] links
 
 ## page state
 
 using sanity CMS
 
-- [o] projects
+- [_] projects
   demo link
   github link
   project images
