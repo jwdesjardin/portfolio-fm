@@ -42,22 +42,22 @@ npx create-react-app client --template @chakra-ui/typescript
       - [x] tech-stack
         - [x] circle-button
         - [_] modals
-  - [_] layout page-links
+  - [x] layout page-links
 
-- [_] aboutMe/contact page
+- [x] aboutMe/contact page
 
-  - [_] title
-  - [_] layout header (shared)
-  - [_] paragraph text
-  - [_] profile image
-  - [_] get in touch
-    - [_] contact links
-  - [_] layout page-links (shared)
+  - [x] title
+  - [x] layout header (shared)
+  - [x] paragraph text
+  - [x] profile image
+  - [x] get in touch
+    - [x] contact links
+  - [x] layout page-links (shared)
 
-- [_] menu
-  - [_] hamburger button
-    - [_] dropdown box
-      - [_] links
+- [x] menu
+  - [x] hamburger button
+    - [x] dropdown box
+      - [x] links
 
 ## page state
 
