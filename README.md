@@ -22,9 +22,10 @@ npx create-react-app client --template @chakra-ui/typescript
 - [_] project card
   - [_] animate layout
   - [_] animate prescence modal
-- [_] image slideshow
-  - [_] animate precense images
-  - [_] buttons hover click
+- [.] image slideshow
+  - [x] animate precense images
+  - [x] buttons hover click
+  - [_] wrap image array
 - [_] links / icons hover and click
 
 ## components
@@ -41,7 +42,7 @@ npx create-react-app client --template @chakra-ui/typescript
       - [x] description
       - [x] tech-stack
         - [x] circle-button
-        - [_] modals
+        - [x] modals
   - [x] layout page-links
 
 - [x] aboutMe/contact page

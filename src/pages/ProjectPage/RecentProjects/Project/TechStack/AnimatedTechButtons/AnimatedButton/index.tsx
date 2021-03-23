@@ -5,9 +5,15 @@ import { motion } from 'framer-motion'
 
 interface AnimatedButtonProps {
   index: number
+  animateLocation: string
+  setOpenModal: React.Dispatch<React.SetStateAction<string>>
 }
 
-export const AnimatedButton = ({ index = 0 }) => {
+export const AnimatedButton: React.FC<AnimatedButtonProps> = ({
+  index = 0,
+  setOpenModal,
+  animateLocation,
+}) => {
   const ChevronDownIcon = () => (
     <KeyboardArrowDown style={{ fontSize: '1.2rem' }}></KeyboardArrowDown>
   )
@@ -15,6 +21,12 @@ export const AnimatedButton = ({ index = 0 }) => {
   const MotionCircle = motion(Circle)
 
   const colors = ['#067BDB', '#8a2cc9', '#2ec486', '#ff9f1c']
+
+  const AnimatedButtonVariants = {
+    initial: { opacity: 0, scale: 0.1 },
+    animate: { opacity: 1, scale: 1 },
+    exit: { opacity: 0, scale: 0.1 },
+  }
 
   return (
     <MotionCircle
@@ -27,8 +39,12 @@ export const AnimatedButton = ({ index = 0 }) => {
         y: [10, 0, 5, 0],
         rotate: [0, 5, -5, 5, 0],
       }}
-      whileClick={{ scale: 0.1, opacity: 0 }}
-      onClick={() => console.log('clicky')}
+      // whileTap={{ scale: 0.1, opacity: 0 }}
+      onClick={() => setOpenModal(animateLocation)}
+      variants={AnimatedButtonVariants}
+      initial='initial'
+      animate='animate'
+      exit='exit'
     >
       <Center flexDirection='column'>
         <Text fontWeight='semibold'>Typescript</Text>
