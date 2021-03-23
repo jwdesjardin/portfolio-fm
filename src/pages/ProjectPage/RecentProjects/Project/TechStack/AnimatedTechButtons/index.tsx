@@ -5,7 +5,7 @@ import { AnimatedButton } from './AnimatedButton'
 
 export const AnimatedTechButtons = () => {
   return (
-    <Center w='100%' h='350px'>
+    <Center w='100%' h='330px'>
       <Grid gridGap={5} gridTemplateColumns='repeat(2, 1fr)'>
         {/* box #1 */}
         <AnimatedButton></AnimatedButton>

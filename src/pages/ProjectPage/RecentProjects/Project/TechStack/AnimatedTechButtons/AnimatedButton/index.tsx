@@ -7,7 +7,7 @@ export const AnimatedButton = () => {
     <KeyboardArrowDown style={{ fontSize: '1.2rem' }}></KeyboardArrowDown>
   )
   return (
-    <Circle size='140px' bg='white' color='black'>
+    <Circle size='125px' bg='white' color='black'>
       <Center flexDirection='column'>
         <Text fontWeight='semibold'>Typescript</Text>
         <ChevronDownIcon></ChevronDownIcon>

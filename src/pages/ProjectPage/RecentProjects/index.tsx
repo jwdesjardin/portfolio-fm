@@ -5,8 +5,8 @@ import { Project } from './Project'
 
 export const RecentProjects = () => (
   <Box>
-    <SectionHeader></SectionHeader>
     <VStack spacing={32}>
+      <SectionHeader>Recent Projects</SectionHeader>
       <Project></Project>
       <Project></Project>
       <Project></Project>

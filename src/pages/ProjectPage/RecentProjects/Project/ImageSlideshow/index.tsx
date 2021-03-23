@@ -13,7 +13,7 @@ export const ImageSlideshow = () => {
 
       {/* image */}
 
-      <Image w='70%' src='/images/project1.png' objectFit='contain' borderRadius='md'></Image>
+      <Image w='60%' src='/images/project1.png' objectFit='contain' borderRadius='md'></Image>
 
       {/* chevronright */}
       <ChevronRightIcon></ChevronRightIcon>
