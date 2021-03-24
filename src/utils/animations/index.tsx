@@ -1,4 +1,4 @@
-import { Box, Center, Text, HStack, VStack } from '@chakra-ui/react'
+import { Box, Center, Text, HStack, VStack, Circle } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 
 export const shakeAnimation = {
@@ -7,6 +7,7 @@ export const shakeAnimation = {
 }
 
 export const MotionBox = motion(Box)
+export const MotionCircle = motion(Circle)
 export const MotionCenter = motion(Center)
 export const MotionText = motion(Text)
 export const MotionHStack = motion(HStack)
