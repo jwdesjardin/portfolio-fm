@@ -4,12 +4,12 @@ import { Close } from '@material-ui/icons'
 import { motion } from 'framer-motion'
 
 interface CustomModalProps {
-  setOpenModal: React.Dispatch<React.SetStateAction<string>>
+  setOpenModal: React.Dispatch<React.SetStateAction<string | null>>
 
-  variant: string
+  openModal: string
 }
 
-export const CustomModal: React.FC<CustomModalProps> = ({ setOpenModal, variant }) => {
+export const CustomModal: React.FC<CustomModalProps> = ({ setOpenModal, openModal }) => {
   const text1 = `This was the first project i made after picking up typescript. I learned and looked up a lot of information in the beginning around how to use typescript with react like how to anotate the type of a useState hook. how to declare the type for routerProps from react-router-dom in a page component.`
   const text2 = `By the end of this project i am fully hooked on typescript. I will most likely be using it in everything i write going forward. The developement process was so much easier once i got up and running with typescript. There are a lot of features i like about it im just going to list off a few of the things that i explored and appreciated the most about using typescript.`
   const text3 = `Being able to read the type annotations for a function that you import is a huge timesaver. Also getting auto-complete and auto-import in vscode when you have the type defs is a huge timesaver as well. You may need to install the type-def files seprately for some packages but it is well worth it. `
@@ -29,36 +29,42 @@ export const CustomModal: React.FC<CustomModalProps> = ({ setOpenModal, variant 
 
   const ModalVariants = {
     initial: { width: 0, opacity: 0 },
-    animate: { width: 'auto', opacity: 1, transition: { duration: 0.7 } },
-    exit: { width: 0, opacity: 0 },
+    animate: { width: 'auto', opacity: 1 },
+    exit: { width: 0, opacity: 0, backgroundColor: '#FF0000' },
   }
 
+  console.log(openModal)
   return (
-    <MotionBox
-      fontSize={14}
-      p='1rem'
-      m='1rem'
-      border='2px solid white'
-      color='black'
-      bg='white'
-      borderRadius='lg'
-      overflowY='scroll'
+    <motion.div
+      key={openModal}
       variants={ModalVariants}
       initial='initial'
       animate='animate'
       exit='exit'
-      maxH='290px'
+      transition={{ duration: 0.7 }}
     >
-      <Close onClick={() => setOpenModal('')} style={{ float: 'right' }}></Close>
-      <Heading textAlign='center' size='md' py='1rem'>
-        TypeScript with React
-      </Heading>
-      <ModalText>{text1}</ModalText>
-      <ModalText>{text2}</ModalText>
-      <Heading size='sm'>{subtitle1}</Heading>
-      <ModalText>{text3}</ModalText>
-      <Heading size='sm'>{subtitle2}</Heading>
-      <ModalText>{text4}</ModalText>
-    </MotionBox>
+      <MotionBox
+        fontSize={14}
+        p='1rem'
+        m='1rem'
+        border='2px solid white'
+        color='black'
+        bg='white'
+        borderRadius='lg'
+        overflowY='scroll'
+        maxH='290px'
+      >
+        <Close onClick={() => setOpenModal(null)} style={{ float: 'right' }}></Close>
+        <Heading textAlign='center' size='md' py='1rem'>
+          TypeScript with React
+        </Heading>
+        <ModalText>{text1}</ModalText>
+        <ModalText>{text2}</ModalText>
+        <Heading size='sm'>{subtitle1}</Heading>
+        <ModalText>{text3}</ModalText>
+        <Heading size='sm'>{subtitle2}</Heading>
+        <ModalText>{text4}</ModalText>
+      </MotionBox>
+    </motion.div>
   )
 }

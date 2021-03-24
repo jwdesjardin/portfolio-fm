@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 interface AnimatedButtonProps {
   index: number
   animateLocation: string
-  setOpenModal: React.Dispatch<React.SetStateAction<string>>
+  setOpenModal: React.Dispatch<React.SetStateAction<string | null>>
 }
 
 export const AnimatedButton: React.FC<AnimatedButtonProps> = ({
@@ -25,7 +25,7 @@ export const AnimatedButton: React.FC<AnimatedButtonProps> = ({
   const AnimatedButtonVariants = {
     initial: { opacity: 0, scale: 0.2 },
     animate: { opacity: 1, scale: 1, transition: { duration: 0.7 } },
-    exit: { opacity: 0, scale: 0.2 },
+    exit: { opacity: 0, scale: 0.2, transition: { duration: 0.7 } },
   }
 
   return (
@@ -36,8 +36,10 @@ export const AnimatedButton: React.FC<AnimatedButtonProps> = ({
       whileHover={{
         backgroundColor: colors[index % 4],
         color: '#FFF',
-        y: [10, 0, 5, 0],
-        rotate: [0, 5, -5, 5, 0],
+        // y: [10, 0, 5, 0],
+        // rotate: [0, 5, -5, 5, 0],
+        y: [0, -7, -7, -7, -7],
+        rotate: [0, -5, 5, -5, 0],
       }}
       // whileTap={{ scale: 0.1, opacity: 0 }}
       onClick={() => setOpenModal(animateLocation)}

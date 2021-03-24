@@ -1,16 +1,23 @@
 import * as React from 'react'
-import { Box, Center } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import { AccountCircle, Email, Home, Menu, Web } from '@material-ui/icons'
 import { NavLink } from './NavLink'
+import { MotionCenter } from '../animations'
 
 export const Nav = () => {
   const [isToggled, setIsToggled] = React.useState(false)
 
   return (
     <>
-      <Center bg={isToggled ? 'lightgray' : ''} p={2} m={2} borderRadius='md'>
+      <MotionCenter
+        bg={isToggled ? 'lightgray' : ''}
+        p={2}
+        m={2}
+        borderRadius='md'
+        whileHover={{ backgroundColor: '#bdbdbd' }}
+      >
         <Menu onClick={() => setIsToggled(!isToggled)}></Menu>
-      </Center>
+      </MotionCenter>
 
       {/* dropdown */}
       {isToggled && (

@@ -7,8 +7,6 @@ import { TechStack } from './TechStack'
 export const Project = () => {
   return (
     <Box>
-      <HeaderLinks></HeaderLinks>
-
       {/* project title */}
       <Box d='flex' justifyContent='center' m='2rem'>
         <Heading fontSize='2.2rem'>NHL Stats App</Heading>
@@ -25,6 +23,7 @@ export const Project = () => {
       <TechStack></TechStack>
 
       <ImageSlideshow></ImageSlideshow>
+      <HeaderLinks></HeaderLinks>
     </Box>
   )
 }

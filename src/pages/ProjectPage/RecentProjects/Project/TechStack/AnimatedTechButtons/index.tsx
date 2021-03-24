@@ -6,7 +6,7 @@ import { CustomModal } from './CustomModal'
 import { AnimatePresence, motion } from 'framer-motion'
 
 export const AnimatedTechButtons = () => {
-  const [openModal, setOpenModal] = React.useState('')
+  const [openModal, setOpenModal] = React.useState<string | null>(null)
 
   const MotionCenter = motion(Center)
   const MotionGrid = motion(Grid)
@@ -14,25 +14,24 @@ export const AnimatedTechButtons = () => {
 
   return (
     <MotionCenter h='350px'>
-      <AnimatePresence>
-        <MotionGrid gridGap={5} gridTemplateColumns='repeat(2, 1fr)' mx={4}>
-          {/* create buttons */}
-          {list.map((item, idx) => {
-            return openModal !== item ? (
-              <AnimatedButton
-                animateLocation={item}
-                setOpenModal={setOpenModal}
-                index={idx}
-              ></AnimatedButton>
-            ) : (
-              <Box h='125px'></Box>
-            )
-          })}
-        </MotionGrid>
+      <MotionGrid gridGap={5} gridTemplateColumns='repeat(2, 1fr)' mx={4}>
+        {/* create buttons */}
+        {list.map((item, idx) => {
+          return openModal !== item ? (
+            <AnimatedButton
+              key={idx}
+              animateLocation={item}
+              setOpenModal={setOpenModal}
+              index={idx}
+            ></AnimatedButton>
+          ) : (
+            <Box key={idx} h='125px'></Box>
+          )
+        })}
+      </MotionGrid>
 
-        {openModal !== '' && (
-          <CustomModal variant={openModal} setOpenModal={setOpenModal}></CustomModal>
-        )}
+      <AnimatePresence>
+        {openModal && <CustomModal openModal={openModal} setOpenModal={setOpenModal}></CustomModal>}
       </AnimatePresence>
     </MotionCenter>
   )

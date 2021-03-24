@@ -20,7 +20,7 @@ npx create-react-app client --template @chakra-ui/typescript
   - [_] fade in / fade out
   - [_] path animation
 - [_] project card
-  - [_] animate layout
+  - [x] animate layout
   - [x] animate prescence modal
 - [.] image slideshow
   - [x] animate precense images

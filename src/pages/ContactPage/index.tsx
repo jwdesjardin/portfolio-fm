@@ -6,6 +6,7 @@ import { ContactLinks } from './ContactLinks'
 import { ChevronLeft } from '@material-ui/icons'
 
 import { Link as RouterLink } from 'react-router-dom'
+import { MotionHStack, shakeAnimation } from '../../utils/animations'
 
 export const ContactPage = () => {
   const sectionText = `When I decided to fully pursue software engineering I scoured the internet for the best
@@ -41,10 +42,10 @@ export const ContactPage = () => {
 
       {/* next page links */}
       <RouterLink to='/'>
-        <HStack spacing={0} float='left' my={16}>
+        <MotionHStack spacing={0} float='left' my={16} whileHover={shakeAnimation}>
           <ChevronLeft></ChevronLeft>
           <Text maxW={20}>Projects</Text>
-        </HStack>
+        </MotionHStack>
       </RouterLink>
     </Container>
   )
