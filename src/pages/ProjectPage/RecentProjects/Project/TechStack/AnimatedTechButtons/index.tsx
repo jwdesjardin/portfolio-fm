@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Center, Grid } from '@chakra-ui/react'
+import { Box, Center, Grid } from '@chakra-ui/react'
 
 import { AnimatedButton } from './AnimatedButton'
 import { CustomModal } from './CustomModal'
@@ -10,50 +10,28 @@ export const AnimatedTechButtons = () => {
 
   const MotionCenter = motion(Center)
   const MotionGrid = motion(Grid)
+  const list = ['top-left', 'top-right', 'bottom-left', 'bottom-right']
 
   return (
-    <MotionCenter w='100%' h='330px' layout>
+    <MotionCenter h='350px'>
       <AnimatePresence>
-        {openModal === '' && (
-          <MotionGrid gridGap={5} gridTemplateColumns='repeat(2, 1fr)' layout>
-            {/* box #1 */}
-            <AnimatedButton
-              animateLocation='top-left'
-              setOpenModal={setOpenModal}
-              index={0}
-            ></AnimatedButton>
-            {/* box #2 */}
-            <AnimatedButton
-              animateLocation='top-right'
-              setOpenModal={setOpenModal}
-              index={1}
-            ></AnimatedButton>
-            {/* box #3 */}
-            <AnimatedButton
-              animateLocation='bottom-left'
-              setOpenModal={setOpenModal}
-              index={2}
-            ></AnimatedButton>
-            {/* box #4 */}
-            <AnimatedButton
-              animateLocation='bottom-right'
-              setOpenModal={setOpenModal}
-              index={3}
-            ></AnimatedButton>
-          </MotionGrid>
-        )}
+        <MotionGrid gridGap={5} gridTemplateColumns='repeat(2, 1fr)' mx={4}>
+          {/* create buttons */}
+          {list.map((item, idx) => {
+            return openModal !== item ? (
+              <AnimatedButton
+                animateLocation={item}
+                setOpenModal={setOpenModal}
+                index={idx}
+              ></AnimatedButton>
+            ) : (
+              <Box h='125px'></Box>
+            )
+          })}
+        </MotionGrid>
 
-        {openModal === 'top-left' && (
-          <CustomModal variant='top-left' setOpenModal={setOpenModal}></CustomModal>
-        )}
-        {openModal === 'bottom-left' && (
-          <CustomModal variant='bottom-left' setOpenModal={setOpenModal}></CustomModal>
-        )}
-        {openModal === 'top-right' && (
-          <CustomModal variant='top-right' setOpenModal={setOpenModal}></CustomModal>
-        )}
-        {openModal === 'bottom-right' && (
-          <CustomModal variant='bottom-right' setOpenModal={setOpenModal}></CustomModal>
+        {openModal !== '' && (
+          <CustomModal variant={openModal} setOpenModal={setOpenModal}></CustomModal>
         )}
       </AnimatePresence>
     </MotionCenter>

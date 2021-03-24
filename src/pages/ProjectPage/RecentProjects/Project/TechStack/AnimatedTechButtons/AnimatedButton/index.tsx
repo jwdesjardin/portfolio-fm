@@ -23,9 +23,9 @@ export const AnimatedButton: React.FC<AnimatedButtonProps> = ({
   const colors = ['#067BDB', '#8a2cc9', '#2ec486', '#ff9f1c']
 
   const AnimatedButtonVariants = {
-    initial: { opacity: 0, scale: 0.1 },
-    animate: { opacity: 1, scale: 1 },
-    exit: { opacity: 0, scale: 0.1 },
+    initial: { opacity: 0, scale: 0.2 },
+    animate: { opacity: 1, scale: 1, transition: { duration: 0.7 } },
+    exit: { opacity: 0, scale: 0.2 },
   }
 
   return (
