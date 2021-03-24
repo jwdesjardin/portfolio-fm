@@ -47,6 +47,7 @@ export const AnimatedButton: React.FC<AnimatedButtonProps> = ({
       initial='initial'
       animate='animate'
       exit='exit'
+      cursor='pointer'
     >
       <Center flexDirection='column'>
         <Text fontWeight='semibold'>Typescript</Text>

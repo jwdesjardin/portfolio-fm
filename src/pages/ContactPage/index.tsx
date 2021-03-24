@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Text, Container, Heading, Image, Center, VStack, HStack } from '@chakra-ui/react'
+import { Text, Container, Heading, Image, Center, VStack } from '@chakra-ui/react'
 
 import { AboutMeSection } from './AboutMeSection'
 import { ContactLinks } from './ContactLinks'
@@ -35,7 +35,7 @@ export const ContactPage = () => {
       </VStack>
 
       <Center mt='10rem'>
-        <Image w='35%' src='/images/profile-pic.jpg'></Image>
+        <Image borderRadius='md' w='35%' src='/images/profile-pic.jpg'></Image>
       </Center>
 
       <ContactLinks></ContactLinks>

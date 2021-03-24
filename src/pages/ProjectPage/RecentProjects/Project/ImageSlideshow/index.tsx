@@ -1,42 +1,35 @@
 import * as React from 'react'
-import { Box, Center, Image } from '@chakra-ui/react'
+import { Box, Center } from '@chakra-ui/react'
 import { ChevronLeft, ChevronRight } from '@material-ui/icons'
-import { motion, AnimatePresence, PanInfo } from 'framer-motion'
-import { MotionCenter, MotionCircle, shakeAnimation } from '../../../../../utils/animations'
+import { AnimatePresence, PanInfo } from 'framer-motion'
+import { MotionCircle, MotionImage } from '../../../../../utils/animations'
 import { wrap } from '@popmotion/popcorn'
 
 export const ImageSlideshow = () => {
   const ChevronLeftIcon = () => <ChevronLeft style={{ fontSize: '2.5rem' }}></ChevronLeft>
   const ChevronRightIcon = () => <ChevronRight style={{ fontSize: '2.5rem' }}></ChevronRight>
 
-  const MotionImage = motion(Image)
-
-  const ImageVariants = {
-    initial: { opacity: 0, x: -450, rotate: -10 },
-    animate: { opacity: 1, x: 0, rotate: 0, transition: { duration: 0.7 } },
-    exit: { opacity: 0, x: 450, rotate: 10, transition: { duration: 0.7 } },
-  }
-
   const variants = {
     enter: (direction: number) => ({
       x: direction > 0 ? 500 : -500,
+      rotate: direction > 0 ? 10 : -10,
       opacity: 0,
     }),
     center: {
       x: 0,
       opacity: 1,
+      rotate: 0,
     },
     exit: (direction: number) => {
       return {
         x: direction > 0 ? -500 : 500,
+        rotate: direction > 0 ? -10 : 10,
         opacity: 0,
       }
     },
   }
 
   const imageSrc = ['/images/project1.png', '/images/project2.JPG', '/images/project3.jpg']
-
-  const MotionBox = motion(Box)
 
   const [[page, direction], setPage] = React.useState([0, 0])
 
@@ -60,7 +53,13 @@ export const ImageSlideshow = () => {
   return (
     <Box w='100%' d='flex' justifyContent='space-evenly' alignItems='center'>
       {/* chevronleft */}
-      <MotionCircle p={4} size='50px' bg='rgba(0,0,0,.3)' onClick={() => paginate(1)}>
+      <MotionCircle
+        p={4}
+        size='50px'
+        bg='rgba(0,0,0,.3)'
+        onClick={() => paginate(-1)}
+        cursor='pointer'
+      >
         <ChevronLeftIcon></ChevronLeftIcon>
       </MotionCircle>
 
@@ -89,7 +88,13 @@ export const ImageSlideshow = () => {
       </Center>
 
       {/* chevronright */}
-      <MotionCircle p={4} size='50px' bg='rgba(0,0,0,.3)' onClick={() => paginate(1)}>
+      <MotionCircle
+        p={4}
+        size='50px'
+        bg='rgba(0,0,0,.3)'
+        onClick={() => paginate(1)}
+        cursor='pointer'
+      >
         <ChevronRightIcon></ChevronRightIcon>
       </MotionCircle>
     </Box>
