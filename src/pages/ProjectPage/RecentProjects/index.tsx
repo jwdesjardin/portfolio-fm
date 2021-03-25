@@ -9,6 +9,8 @@ export const RecentProjects = () => (
       <div id='projects'></div>
       <SectionHeader>Recent Projects</SectionHeader>
 
+      {/* this is where project data will be brought in from the backend */}
+
       <Project></Project>
       <Project></Project>
       <Project></Project>

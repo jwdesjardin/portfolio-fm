@@ -8,17 +8,18 @@ npx create-react-app client --template @chakra-ui/typescript
 
 ## screens
 
-- [_] home/project page
-- [_] aboutMe/contact page
+- [x] home/project page
+- [x] aboutMe/contact page
 
 ## animations
 
-- [_] menu
-  - [_] stagger children
-  - [_] dropdown pullup
-- [_] home
-  - [_] fade in / fade out
-  - [_] path animation
+- [x] menu
+  - [x] stagger children
+  - [x] dropdown pullup
+  - [x] link hover effect
+- [x] home
+  - [x] fade in / fade out
+  - [x] react router animations for each page
 - [x] project card
   - [x] animate layout
   - [x] animate prescence modal
@@ -30,7 +31,7 @@ npx create-react-app client --template @chakra-ui/typescript
 
 ## components
 
-- [_] home/project page
+- [x] home/project page
 
   - [x] greeting
   - [x] recent projects
@@ -76,5 +77,17 @@ using sanity CMS
   github link
   linkdin link
   email
+
+## UI Theme
+
+- extended theme from Chakra UI
+  - [] colors
+  - [] font
+    - [] weight, size,
+    - [] family
+  - [] links
+  - [] transitions
+
+## Mobile media query
 
 hard-code about me / profile image

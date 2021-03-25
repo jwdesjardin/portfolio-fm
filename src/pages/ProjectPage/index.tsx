@@ -1,34 +1,26 @@
 import * as React from 'react'
-import { Box, Container, HStack, Text } from '@chakra-ui/react'
+import { Container, Text } from '@chakra-ui/react'
 import { Greeting } from './Greeting'
 import { RecentProjects } from './RecentProjects'
 import { ChevronRight } from '@material-ui/icons'
 import { Link as RouterLink, useLocation } from 'react-router-dom'
-import { motion } from 'framer-motion'
 import { MotionBox, MotionHStack, shakeAnimation } from '../../utils/animations'
 
-import { Element, animateScroll as scroll, scroller } from 'react-scroll'
+import { Element as ScrollElement, animateScroll as scroll, scroller } from 'react-scroll'
 
 export const ProjectPage = () => {
   const location = useLocation()
 
   React.useEffect(() => {
     if (location.hash === '#projects') {
-      console.log('scrolling')
       scroller.scrollTo('projects', {
         duration: 1500,
         delay: 100,
         smooth: true,
-
-        offset: 50, // Scrolls to element + 50 pixels down the page
+        offset: 50,
       })
     } else {
-      scroll.scrollTo(0, {
-        // duration: 1500,
-        // delay: 100,
-        // smooth: true,
-        // offset: 50, // Scrolls to element + 50 pixels down the page
-      })
+      scroll.scrollTo(0, {})
     }
   }, [location])
 
@@ -41,7 +33,7 @@ export const ProjectPage = () => {
     >
       <Greeting></Greeting>
       <Container maxW='55rem'>
-        <Element name='projects'></Element>
+        <ScrollElement name='projects'></ScrollElement>
         <RecentProjects></RecentProjects>
 
         {/* next page links */}

@@ -5,15 +5,17 @@ import { ColorModeSwitcher } from './ColorModeSwitcher'
 import { Route, Switch, useLocation } from 'react-router-dom'
 import { ProjectPage } from './pages/ProjectPage'
 import { ContactPage } from './pages/ContactPage'
-import { Box } from '@chakra-ui/react'
+import { Box, useColorModeValue } from '@chakra-ui/react'
 import { Nav } from './utils/Nav'
 import { AnimatePresence } from 'framer-motion'
 
 export const App = () => {
   const location = useLocation()
 
+  const bg = useColorModeValue('black', 'white')
+
   return (
-    <>
+    <Box>
       <Box position='fixed' top={0} w='98%' d='flex' justifyContent='space-between'>
         <ColorModeSwitcher></ColorModeSwitcher>
         <Nav></Nav>
@@ -25,6 +27,6 @@ export const App = () => {
           <Route path='/contact' component={ContactPage}></Route>
         </Switch>
       </AnimatePresence>
-    </>
+    </Box>
   )
 }

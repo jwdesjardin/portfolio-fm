@@ -61,7 +61,7 @@ export const Nav = () => {
             animate='open'
             exit='closed'
           >
-            <RouterLink to='/#'>
+            <RouterLink to='/#home'>
               <MotionBox variants={linksVariants} color='#067BDB' key={5}>
                 <NavLink>
                   <Home style={{ marginRight: '1rem' }}></Home>
