@@ -6,7 +6,7 @@ import { Link as RouterLink } from 'react-router-dom'
 import { MotionBox, shakeAnimation } from '../../../utils/animations'
 
 export const ContactLinks = () => (
-  <Center h='100vh'>
+  <Center h='100vh' id='links'>
     <Center flexDirection='column'>
       <Heading fontSize={46} my='4rem' textAlign='center'>
         Get In Touch

@@ -4,6 +4,7 @@ import { AccountCircle, Email, Home, Menu, Web } from '@material-ui/icons'
 import { NavLink } from './NavLink'
 import { MotionBox, MotionCenter } from '../animations'
 import { AnimatePresence } from 'framer-motion'
+import { Link as RouterLink } from 'react-router-dom'
 
 export const Nav = () => {
   const [isToggled, setIsToggled] = React.useState(false)
@@ -60,33 +61,41 @@ export const Nav = () => {
             animate='open'
             exit='closed'
           >
-            <MotionBox variants={linksVariants} color='#067BDB' key={5}>
-              <NavLink>
-                <Home style={{ marginRight: '1rem' }}></Home>
-                Home
-              </NavLink>
-            </MotionBox>
+            <RouterLink to='/#'>
+              <MotionBox variants={linksVariants} color='#067BDB' key={5}>
+                <NavLink>
+                  <Home style={{ marginRight: '1rem' }}></Home>
+                  Home
+                </NavLink>
+              </MotionBox>
+            </RouterLink>
 
-            <MotionBox variants={linksVariants} color='#8a2cc9' key={2}>
-              <NavLink>
-                <Web style={{ marginRight: '1rem' }}></Web>
-                Projects
-              </NavLink>
-            </MotionBox>
+            <RouterLink to='/#projects'>
+              <MotionBox variants={linksVariants} color='#8a2cc9' key={2}>
+                <NavLink>
+                  <Web style={{ marginRight: '1rem' }}></Web>
+                  Projects
+                </NavLink>
+              </MotionBox>
+            </RouterLink>
 
-            <MotionBox variants={linksVariants} color='#ff9f1c' key={3}>
-              <NavLink>
-                <AccountCircle style={{ marginRight: '1rem' }}></AccountCircle>
-                About Me
-              </NavLink>
-            </MotionBox>
+            <RouterLink to='/contact#about'>
+              <MotionBox variants={linksVariants} color='#ff9f1c' key={3}>
+                <NavLink>
+                  <AccountCircle style={{ marginRight: '1rem' }}></AccountCircle>
+                  About Me
+                </NavLink>
+              </MotionBox>
+            </RouterLink>
 
-            <MotionBox variants={linksVariants} color='#2ec486' key={4}>
-              <NavLink>
-                <Email style={{ marginRight: '1rem' }}></Email>
-                Contact
-              </NavLink>
-            </MotionBox>
+            <RouterLink to='/contact#links'>
+              <MotionBox variants={linksVariants} color='#2ec486' key={4}>
+                <NavLink>
+                  <Email style={{ marginRight: '1rem' }}></Email>
+                  Contact
+                </NavLink>
+              </MotionBox>
+            </RouterLink>
           </MotionBox>
         )}
       </AnimatePresence>

@@ -5,10 +5,37 @@ import { AboutMeSection } from './AboutMeSection'
 import { ContactLinks } from './ContactLinks'
 import { ChevronLeft } from '@material-ui/icons'
 
-import { Link as RouterLink } from 'react-router-dom'
-import { MotionHStack, shakeAnimation } from '../../utils/animations'
+import { Link as RouterLink, useLocation } from 'react-router-dom'
+import { MotionBox, MotionHStack, shakeAnimation } from '../../utils/animations'
+
+import * as Scroll from 'react-scroll'
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 export const ContactPage = () => {
+  const location = useLocation()
+  console.log(location)
+
+  React.useEffect(() => {
+    if (location.hash === '#about') {
+      console.log('scrolling')
+      scroller.scrollTo('about', {
+        duration: 1500,
+        delay: 100,
+        smooth: true,
+      })
+    }
+    if (location.hash === '#links') {
+      console.log('scrolling')
+      scroller.scrollTo('links', {
+        duration: 1500,
+        delay: 100,
+        smooth: true,
+
+        offset: 50,
+      })
+    }
+  }, [location])
+
   const sectionText = `When I decided to fully pursue software engineering I scoured the internet for the best
   bootcamps and courses out there and found Udemy courses to be offering an great value. I knew
   I wanted to dedicate myself solely to web development and I bought courses from the
@@ -22,31 +49,43 @@ export const ContactPage = () => {
   The Beginning, & React Front To Back.`
 
   return (
-    <Container maxW='55rem'>
-      {/* Page header */}
-      <Heading fontSize={52} textAlign='center' py='10rem'>
-        About Me
-      </Heading>
+    <MotionBox
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1.5 }}
+    >
+      <Container maxW='55rem'>
+        {/* Page header */}
+        <Element name='about'></Element>
+        <Heading id='about' fontSize={52} textAlign='center' py='10rem'>
+          About Me
+        </Heading>
 
-      <VStack spacing='10rem'>
-        <AboutMeSection sectionText={sectionText} sectionTitle='Education'></AboutMeSection>
-        <AboutMeSection sectionText={sectionText} sectionTitle='Projects'></AboutMeSection>
-        <AboutMeSection sectionText={sectionText} sectionTitle='Goals / Interests'></AboutMeSection>
-      </VStack>
+        <VStack spacing='10rem'>
+          <AboutMeSection sectionText={sectionText} sectionTitle='Education'></AboutMeSection>
+          <AboutMeSection sectionText={sectionText} sectionTitle='Projects'></AboutMeSection>
+          <AboutMeSection
+            sectionText={sectionText}
+            sectionTitle='Goals / Interests'
+          ></AboutMeSection>
+        </VStack>
 
-      <Center mt='10rem'>
-        <Image borderRadius='md' w='35%' src='/images/profile-pic.jpg'></Image>
-      </Center>
+        <Center mt='10rem'>
+          <Image borderRadius='md' w='35%' src='/images/profile-pic.jpg'></Image>
+        </Center>
 
-      <ContactLinks></ContactLinks>
+        <Element name='links'></Element>
+        <ContactLinks></ContactLinks>
 
-      {/* next page links */}
-      <RouterLink to='/'>
-        <MotionHStack spacing={0} float='left' my={16} whileHover={shakeAnimation}>
-          <ChevronLeft></ChevronLeft>
-          <Text maxW={20}>Projects</Text>
-        </MotionHStack>
-      </RouterLink>
-    </Container>
+        {/* next page links */}
+        <RouterLink to='/'>
+          <MotionHStack spacing={0} float='left' my={16} whileHover={shakeAnimation}>
+            <ChevronLeft></ChevronLeft>
+            <Text maxW={20}>Projects</Text>
+          </MotionHStack>
+        </RouterLink>
+      </Container>
+    </MotionBox>
   )
 }

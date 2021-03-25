@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Text, Box } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import { SectionHeader } from '../../../utils/layout/SectionHeader'
 
 interface AboutMeSectionProps {
@@ -13,8 +13,8 @@ export const AboutMeSection: React.FC<AboutMeSectionProps> = ({ sectionTitle, se
       <SectionHeader>{sectionTitle}</SectionHeader>
     </Box>
 
-    <Text fontSize={16} px={10} textAlign='justify' lineHeight='2'>
-      <p style={{ textIndent: '2rem' }}>{sectionText}</p>
-    </Text>
+    <Box fontSize={16} px={10} lineHeight='2'>
+      <p style={{ textIndent: '2rem', textAlign: 'justify' }}>{sectionText}</p>
+    </Box>
   </Box>
 )
