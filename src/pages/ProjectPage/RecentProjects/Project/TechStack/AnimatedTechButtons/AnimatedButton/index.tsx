@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Center, Circle, Text } from '@chakra-ui/react'
+import { Center, Circle, Text, useColorModeValue } from '@chakra-ui/react'
 import { KeyboardArrowDown } from '@material-ui/icons'
 import { motion } from 'framer-motion'
 
@@ -28,11 +28,14 @@ export const AnimatedButton: React.FC<AnimatedButtonProps> = ({
     exit: { opacity: 0, scale: 0.2, transition: { duration: 0.7 } },
   }
 
+  const circleBg = useColorModeValue('myDark.500', 'myWhite.500')
+  const circleColor = useColorModeValue('myWhite.500', 'myDark.500')
+
   return (
     <MotionCircle
       size='125px'
-      bg='white'
-      color='black'
+      bg={circleBg}
+      color={circleColor}
       whileHover={{
         backgroundColor: colors[index % 4],
         color: '#FFF',

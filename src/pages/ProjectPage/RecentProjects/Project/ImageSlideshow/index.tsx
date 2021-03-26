@@ -1,30 +1,30 @@
 import * as React from 'react'
-import { Box, Center } from '@chakra-ui/react'
+import { Text, Box, Center, useColorModeValue, useMediaQuery } from '@chakra-ui/react'
 import { ChevronLeft, ChevronRight } from '@material-ui/icons'
 import { AnimatePresence, PanInfo } from 'framer-motion'
 import { MotionCircle, MotionImage } from '../../../../../utils/animations'
 import { wrap } from '@popmotion/popcorn'
 
 export const ImageSlideshow = () => {
-  const ChevronLeftIcon = () => <ChevronLeft style={{ fontSize: '2.5rem' }}></ChevronLeft>
-  const ChevronRightIcon = () => <ChevronRight style={{ fontSize: '2.5rem' }}></ChevronRight>
-
   const variants = {
     enter: (direction: number) => ({
       x: direction > 0 ? 500 : -500,
       rotate: direction > 0 ? 10 : -10,
       opacity: 0,
+      height: 250,
     }),
     center: {
       x: 0,
       opacity: 1,
       rotate: 0,
+      height: 250,
     },
     exit: (direction: number) => {
       return {
         x: direction > 0 ? -500 : 500,
         rotate: direction > 0 ? -10 : 10,
         opacity: 0,
+        height: 250,
       }
     },
   }
@@ -50,22 +50,27 @@ export const ImageSlideshow = () => {
     }
   }
 
+  const arrowBg = useColorModeValue('rgba(0,0,0,.3)', 'rgba(0,0,0,.3)')
+
+  const [mobile] = useMediaQuery('(max-width: 400px)')
+
   return (
     <Box w='100%' d='flex' justifyContent='space-evenly' alignItems='center'>
       {/* chevronleft */}
       <MotionCircle
         p={4}
         size='50px'
-        bg='rgba(0,0,0,.3)'
+        bg={arrowBg}
         onClick={() => paginate(-1)}
         cursor='pointer'
+        hidden={mobile ? true : false}
       >
-        <ChevronLeftIcon></ChevronLeftIcon>
+        <ChevronLeft></ChevronLeft>
       </MotionCircle>
 
       {/* image */}
 
-      <Center h='250px' w='450px'>
+      <Center h='250px' maxW='450px' flexDirection='column'>
         <AnimatePresence exitBeforeEnter custom={direction}>
           <MotionImage
             key={page}
@@ -85,6 +90,10 @@ export const ImageSlideshow = () => {
             borderRadius='md'
           ></MotionImage>
         </AnimatePresence>
+        <Text color='gray.400' my={2} hidden={mobile ? false : true}>
+          {' '}
+          <ChevronLeft></ChevronLeft> Swipe for more <ChevronRight></ChevronRight>{' '}
+        </Text>
       </Center>
 
       {/* chevronright */}
@@ -94,8 +103,9 @@ export const ImageSlideshow = () => {
         bg='rgba(0,0,0,.3)'
         onClick={() => paginate(1)}
         cursor='pointer'
+        hidden={mobile ? true : false}
       >
-        <ChevronRightIcon></ChevronRightIcon>
+        <ChevronRight></ChevronRight>
       </MotionCircle>
     </Box>
   )

@@ -1,4 +1,4 @@
-import { extendTheme, useColorModeValue } from '@chakra-ui/react'
+import { extendTheme } from '@chakra-ui/react'
 import { mode } from '@chakra-ui/theme-tools'
 
 export const theme = extendTheme({
@@ -6,34 +6,30 @@ export const theme = extendTheme({
     global: (props) => ({
       body: {
         fontFamily: 'body',
-        color: mode('myDark.900', 'myLight.500')(props),
-        bg: mode('myLight.500', 'myDark.900')(props),
+        color: mode('myDark.500', 'myWhite.500')(props),
+        bg: mode('myPlatinum.500', 'myDark.500')(props),
         lineHeight: 'base',
       },
     }),
   },
 
   colors: {
-    myGray: {
-      50: '#c7ccd1',
-      100: '#b0b8bf',
-      200: '#9aa3ac',
-      300: '#848f9a',
-      400: '#6e7a87',
-      500: '#5c6670',
-      600: '#49525a',
-      700: '#373d43',
-      800: '#25292d',
-      900: '#121416',
+    myDark: {
+      // dark-blue-black
+      // 500: '#020c12',
+      500: '#121416',
     },
     myWhite: {
       500: '#Fdfffc',
     },
+    myPlatinum: {
+      500: '#eaebeb',
+    },
     myBlue: {
-      500: '#067bdb',
+      500: '#1090f9',
     },
     myPurple: {
-      500: '#8a2cc9',
+      500: '#9d47d7',
     },
     myGreen: {
       500: '#2ec486',

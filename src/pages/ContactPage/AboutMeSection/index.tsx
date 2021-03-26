@@ -8,12 +8,12 @@ interface AboutMeSectionProps {
 }
 
 export const AboutMeSection: React.FC<AboutMeSectionProps> = ({ sectionTitle, sectionText }) => (
-  <Box>
-    <Box mb='4rem'>
+  <Box w='100%'>
+    <Box w='100%' mb='4rem'>
       <SectionHeader>{sectionTitle}</SectionHeader>
     </Box>
 
-    <Box fontSize={16} px={10} lineHeight='2'>
+    <Box fontSize={16} lineHeight='1.7'>
       <p style={{ textIndent: '2rem', textAlign: 'justify' }}>{sectionText}</p>
     </Box>
   </Box>

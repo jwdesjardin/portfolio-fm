@@ -1,28 +1,30 @@
+import { useColorMode, useMediaQuery } from '@chakra-ui/react'
 import * as React from 'react'
 
 import { MotionBox } from '../../animations'
 
 const linkVariants = {
-  initial: { backgroundColor: '#444' },
-  hover: { backgroundColor: '#222' },
+  initial: {},
+  light: { backgroundColor: '#eaebeb' },
+  dark: { backgroundColor: '#020c12' },
 }
 
 export const NavLink: React.FC = ({ children }) => {
+  const { colorMode } = useColorMode()
+  const [mobile] = useMediaQuery('(max-width: 400px)')
   return (
     <MotionBox
-      bg='blackAlpha.600'
       fontWeight='bold'
       fontSize={20}
-      w='200px'
       d='flex'
       alignItems='center'
       borderRadius='md'
+      minW={mobile ? '160px' : '200px'}
       p={2}
       m={1}
-      pl='2.5rem'
       variants={linkVariants}
       initial='initial'
-      whileHover='hover'
+      whileHover={colorMode === 'light' ? 'light' : 'dark'}
       transistion={{ duration: 0.7 }}
     >
       {children}

@@ -6,15 +6,15 @@ import { shakeAnimation } from '../../../../../utils/animations'
 import { Link as RouterLink } from 'react-router-dom'
 
 export const HeaderLinks = () => {
-  const WebIcon = () => <Web style={{ fontSize: '2.2rem', color: 'yellow' }}></Web>
-  const GithubIcon = () => <GitHub style={{ fontSize: '2.2rem', color: 'green' }}></GitHub>
+  const WebIcon = () => <Web style={{ fontSize: '2.2rem' }}></Web>
+  const GithubIcon = () => <GitHub style={{ fontSize: '2.2rem' }}></GitHub>
 
   const MotionVStack = motion(VStack)
 
   return (
     <Box d='flex' alignItems='center' justifyContent='space-between' ml={4} mt={6}>
       {/* border */}
-      <Box borderBottom='dotted white 14px' w='80%'></Box>
+      <Box borderBottom='dotted 14px' w='100%' mr={4}></Box>
 
       <HStack spacing={4}>
         {/* demo icon */}
@@ -23,13 +23,12 @@ export const HeaderLinks = () => {
             spacing={0}
             whileHover={shakeAnimation}
             p={2}
-            boxShadow='0px 0px 2px 0px yellow'
+            boxShadow='0px 0px 2px 0px'
             borderRadius='md'
+            color='myOrange.500'
           >
             <WebIcon></WebIcon>
-            <Text fontSize={13} color='yellow'>
-              DEMO
-            </Text>
+            <Text fontSize={13}>DEMO</Text>
           </MotionVStack>
         </RouterLink>
 
@@ -39,13 +38,12 @@ export const HeaderLinks = () => {
             spacing={0}
             whileHover={shakeAnimation}
             p={2}
-            boxShadow='0px 0px 2px 0px green'
+            boxShadow='0px 0px 2px 0px'
             borderRadius='md'
+            color='myGreen.500'
           >
             <GithubIcon></GithubIcon>
-            <Text fontSize={13} color='green'>
-              REPO
-            </Text>
+            <Text fontSize={13}>REPO</Text>
           </MotionVStack>
         </RouterLink>
       </HStack>

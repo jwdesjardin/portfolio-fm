@@ -5,8 +5,8 @@ import { Project } from './Project'
 
 export const RecentProjects = () => (
   <Box>
-    <VStack spacing={24}>
-      <div id='projects'></div>
+    <div id='projects'></div>
+    <VStack spacing={20}>
       <SectionHeader>Recent Projects</SectionHeader>
 
       {/* this is where project data will be brought in from the backend */}

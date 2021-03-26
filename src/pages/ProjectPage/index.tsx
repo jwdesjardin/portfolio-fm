@@ -17,7 +17,7 @@ export const ProjectPage = () => {
         duration: 1500,
         delay: 100,
         smooth: true,
-        offset: 50,
+        offset: 0,
       })
     } else {
       scroll.scrollTo(0, {})
@@ -38,8 +38,14 @@ export const ProjectPage = () => {
 
         {/* next page links */}
         <RouterLink to='/contact#about'>
-          <MotionHStack spacing={0} float='right' my={24} mb={16} whileHover={shakeAnimation}>
-            <Text maxW={20}>AboutMe / ContactMe</Text>
+          <MotionHStack
+            spacing={0}
+            float='right'
+            my={24}
+            mb={16}
+            whileHover={{ ...shakeAnimation, color: '#1090f9' }}
+          >
+            <Text maxW={20}>About Me / Contact</Text>
             <ChevronRight></ChevronRight>
           </MotionHStack>
         </RouterLink>

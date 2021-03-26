@@ -12,11 +12,11 @@ import { AnimatePresence } from 'framer-motion'
 export const App = () => {
   const location = useLocation()
 
-  const bg = useColorModeValue('black', 'white')
+  const bg = useColorModeValue('myPlatinum.500', 'myDark.500')
 
   return (
     <Box>
-      <Box position='fixed' top={0} w='98%' d='flex' justifyContent='space-between'>
+      <Box position='fixed' top={0} w='99vw' bg={bg} d='flex' justifyContent='space-between'>
         <ColorModeSwitcher></ColorModeSwitcher>
         <Nav></Nav>
       </Box>

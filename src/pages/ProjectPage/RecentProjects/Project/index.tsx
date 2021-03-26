@@ -1,14 +1,15 @@
 import * as React from 'react'
-import { Box, Heading, Text } from '@chakra-ui/react'
+import { Box, Heading, Text, useColorModeValue } from '@chakra-ui/react'
 import { HeaderLinks } from './HeaderLinks'
 import { ImageSlideshow } from './ImageSlideshow'
 import { TechStack } from './TechStack'
 
 export const Project = () => {
+  const titleColor = useColorModeValue('myDark.500', 'myWhite.500')
   return (
     <Box>
       {/* project title */}
-      <Box d='flex' justifyContent='center' m='2rem'>
+      <Box d='flex' color={titleColor} justifyContent='center' m='2rem'>
         <Heading fontSize='2.2rem'>NHL Stats App</Heading>
       </Box>
 

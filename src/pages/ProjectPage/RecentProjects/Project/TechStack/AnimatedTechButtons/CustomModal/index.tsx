@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Box, Heading, Text } from '@chakra-ui/react'
+import { Box, Heading, Text, useColorMode } from '@chakra-ui/react'
 import { Close } from '@material-ui/icons'
 import { motion } from 'framer-motion'
 
@@ -30,8 +30,10 @@ export const CustomModal: React.FC<CustomModalProps> = ({ setOpenModal, openModa
   const ModalVariants = {
     initial: { width: 0, opacity: 0 },
     animate: { width: 'auto', opacity: 1 },
-    exit: { width: 0, opacity: 0, backgroundColor: '#FF0000' },
+    exit: { width: 0, opacity: 0 },
   }
+
+  const { colorMode } = useColorMode()
 
   console.log(openModal)
   return (
@@ -47,9 +49,8 @@ export const CustomModal: React.FC<CustomModalProps> = ({ setOpenModal, openModa
         fontSize={14}
         p='1rem'
         m='1rem'
-        border='2px solid white'
-        color='black'
-        bg='white'
+        border='2px solid #Fdfffc'
+        boxShadow={colorMode === 'light' ? '1px 1px 3px 0px' : ''}
         borderRadius='lg'
         overflowY='scroll'
         maxH='290px'
