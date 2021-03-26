@@ -13,7 +13,13 @@ export const AnimatedTechButtons = () => {
 
   return (
     <MotionCenter h={mobile ? 'auto' : '350px'} flexDirection={mobile ? 'column' : 'row'}>
-      <MotionGrid gridGap={5} gridTemplateColumns='repeat(2, 1fr)' m={4}>
+      <MotionGrid
+        gridGap={5}
+        gridTemplateColumns={
+          mobile ? (openModal ? 'repeat(4, 1fr)' : 'repeat(2, 1fr)') : 'repeat(2, 1fr)'
+        }
+        m={4}
+      >
         {/* create buttons */}
         {list.map((item, idx) => {
           return openModal !== item ? (
@@ -24,7 +30,7 @@ export const AnimatedTechButtons = () => {
               index={idx}
             ></AnimatedButton>
           ) : (
-            <Box key={idx} h='125px'></Box>
+            <Box m={0} p={0} key={idx} h={mobile ? '100px' : '125px'}></Box>
           )
         })}
       </MotionGrid>

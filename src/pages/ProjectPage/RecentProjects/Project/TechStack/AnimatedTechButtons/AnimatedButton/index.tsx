@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Center, Circle, Text, useColorModeValue } from '@chakra-ui/react'
+import { Center, Circle, Text, useColorModeValue, useMediaQuery } from '@chakra-ui/react'
 import { KeyboardArrowDown } from '@material-ui/icons'
 import { motion } from 'framer-motion'
 
@@ -30,10 +30,11 @@ export const AnimatedButton: React.FC<AnimatedButtonProps> = ({
 
   const circleBg = useColorModeValue('myDark.500', 'myWhite.500')
   const circleColor = useColorModeValue('myWhite.500', 'myDark.500')
-
+  const [mobile] = useMediaQuery('(max-width: 400px)')
   return (
     <MotionCircle
-      size='125px'
+      size={mobile ? '100px' : '125px'}
+      fontSize={14}
       bg={circleBg}
       color={circleColor}
       whileHover={{
