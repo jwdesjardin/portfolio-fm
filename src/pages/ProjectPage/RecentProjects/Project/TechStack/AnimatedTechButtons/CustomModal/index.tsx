@@ -65,6 +65,34 @@ export const CustomModal: React.FC<CustomModalProps> = ({ setOpenModal, openModa
         <ModalText>{text3}</ModalText>
         <Heading size='sm'>{subtitle2}</Heading>
         <ModalText>{text4}</ModalText>
+        {/* <ModalText>{project.body1 &&
+								project.body1.length > 0 &&
+								project.body1.map(node => (
+									<p key={node._key}>
+										{node.children.length > 0 &&
+											node.children.map(text => (
+												<span key={text._key}>
+													{text.marks.length > 0 ? (
+														<a
+															href={
+																node.markDefs.filter(
+																	markDef =>
+																		markDef._key ===
+																		text.marks[0]
+																)[0].href
+															}
+															target='_blank'
+                              rel='noreferrer'
+														>
+															{text.text}
+														</a>
+													) : (
+														<>{text.text}</>
+													)}
+												</span>
+											))}
+									</p>
+								))}</ModalText> */}
       </MotionBox>
     </motion.div>
   )
