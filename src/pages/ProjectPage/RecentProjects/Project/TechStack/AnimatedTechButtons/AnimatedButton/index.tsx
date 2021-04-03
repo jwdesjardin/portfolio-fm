@@ -2,17 +2,20 @@ import * as React from 'react'
 import { Center, Circle, Text, useColorModeValue, useMediaQuery } from '@chakra-ui/react'
 import { KeyboardArrowDown } from '@material-ui/icons'
 import { motion } from 'framer-motion'
+import { Project } from '../../..'
 
 interface AnimatedButtonProps {
   index: number
   animateLocation: string
   setOpenModal: React.Dispatch<React.SetStateAction<string | null>>
+  project: any
 }
 
 export const AnimatedButton: React.FC<AnimatedButtonProps> = ({
   index = 0,
   setOpenModal,
   animateLocation,
+  project,
 }) => {
   const ChevronDownIcon = () => (
     <KeyboardArrowDown style={{ fontSize: '1.2rem' }}></KeyboardArrowDown>
@@ -31,6 +34,26 @@ export const AnimatedButton: React.FC<AnimatedButtonProps> = ({
   const circleBg = useColorModeValue('myDark.500', 'myWhite.500')
   const circleColor = useColorModeValue('myWhite.500', 'myDark.500')
   const [mobile] = useMediaQuery('(max-width: 400px)')
+
+  const getButtonTitle = (index: number) => {
+    if (project) {
+      switch (index) {
+        case 0:
+          return project.topicTitle1
+        case 1:
+          return project.topicTitle2
+        case 2:
+          return project.topicTitle3
+        case 3:
+          return project.topicTitle4
+        default:
+          return
+      }
+    }
+  }
+
+  const buttonTitle = getButtonTitle(index)
+
   return (
     <MotionCircle
       size={mobile ? '100px' : '125px'}
@@ -54,7 +77,9 @@ export const AnimatedButton: React.FC<AnimatedButtonProps> = ({
       cursor='pointer'
     >
       <Center flexDirection='column'>
-        <Text fontWeight='semibold'>Typescript</Text>
+        <Text textAlign='center' fontWeight='semibold'>
+          {buttonTitle}
+        </Text>
         <ChevronDownIcon></ChevronDownIcon>
       </Center>
     </MotionCircle>

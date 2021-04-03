@@ -4,8 +4,13 @@ import { HeaderLinks } from './HeaderLinks'
 import { ImageSlideshow } from './ImageSlideshow'
 import { TechStack } from './TechStack'
 
-export const Project = () => {
+interface ProjectProps {
+  project: any
+}
+
+export const Project: React.FC<ProjectProps> = ({ project }) => {
   const titleColor = useColorModeValue('myDark.500', 'myWhite.500')
+
   return (
     <Box>
       {/* project title */}
@@ -21,7 +26,7 @@ export const Project = () => {
         </Text>
       </Box>
 
-      <TechStack></TechStack>
+      <TechStack project={project}></TechStack>
 
       <ImageSlideshow></ImageSlideshow>
       <HeaderLinks></HeaderLinks>

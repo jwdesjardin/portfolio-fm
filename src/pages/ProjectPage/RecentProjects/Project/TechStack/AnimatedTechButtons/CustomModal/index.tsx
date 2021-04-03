@@ -3,13 +3,16 @@ import { Box, Heading, Text, useColorMode } from '@chakra-ui/react'
 import { Close } from '@material-ui/icons'
 import { motion } from 'framer-motion'
 
+import BlockContent from '@sanity/block-content-to-react'
+import { FaArrowAltCircleLeft } from 'react-icons/fa'
+
 interface CustomModalProps {
   setOpenModal: React.Dispatch<React.SetStateAction<string | null>>
-
+  project: any
   openModal: string
 }
 
-export const CustomModal: React.FC<CustomModalProps> = ({ setOpenModal, openModal }) => {
+export const CustomModal: React.FC<CustomModalProps> = ({ setOpenModal, openModal, project }) => {
   const text1 = `This was the first project i made after picking up typescript. I learned and looked up a lot of information in the beginning around how to use typescript with react like how to anotate the type of a useState hook. how to declare the type for routerProps from react-router-dom in a page component.`
   const text2 = `By the end of this project i am fully hooked on typescript. I will most likely be using it in everything i write going forward. The developement process was so much easier once i got up and running with typescript. There are a lot of features i like about it im just going to list off a few of the things that i explored and appreciated the most about using typescript.`
   const text3 = `Being able to read the type annotations for a function that you import is a huge timesaver. Also getting auto-complete and auto-import in vscode when you have the type defs is a huge timesaver as well. You may need to install the type-def files seprately for some packages but it is well worth it. `
@@ -36,6 +39,26 @@ export const CustomModal: React.FC<CustomModalProps> = ({ setOpenModal, openModa
   const { colorMode } = useColorMode()
 
   console.log(openModal)
+
+  const getModalBody = (str: string) => {
+    if (project) {
+      switch (str) {
+        case 'top-left':
+          return project.topicBody1
+        case 'top-right':
+          return project.topicBody2
+        case 'bottom-left':
+          return project.topicBody3
+        case 'bottom-right':
+          return project.topicBody4
+        default:
+          return
+      }
+    }
+  }
+
+  const modalBody = getModalBody(openModal)
+
   return (
     <motion.div
       key={openModal}
@@ -56,43 +79,9 @@ export const CustomModal: React.FC<CustomModalProps> = ({ setOpenModal, openModa
         maxH='290px'
       >
         <Close onClick={() => setOpenModal(null)} style={{ float: 'right' }}></Close>
-        <Heading textAlign='center' size='md' py='1rem'>
-          TypeScript with React
-        </Heading>
-        <ModalText>{text1}</ModalText>
-        <ModalText>{text2}</ModalText>
-        <Heading size='sm'>{subtitle1}</Heading>
-        <ModalText>{text3}</ModalText>
-        <Heading size='sm'>{subtitle2}</Heading>
-        <ModalText>{text4}</ModalText>
-        {/* <ModalText>{project.body1 &&
-								project.body1.length > 0 &&
-								project.body1.map(node => (
-									<p key={node._key}>
-										{node.children.length > 0 &&
-											node.children.map(text => (
-												<span key={text._key}>
-													{text.marks.length > 0 ? (
-														<a
-															href={
-																node.markDefs.filter(
-																	markDef =>
-																		markDef._key ===
-																		text.marks[0]
-																)[0].href
-															}
-															target='_blank'
-                              rel='noreferrer'
-														>
-															{text.text}
-														</a>
-													) : (
-														<>{text.text}</>
-													)}
-												</span>
-											))}
-									</p>
-								))}</ModalText> */}
+        <Box pt='1rem'>
+          <BlockContent blocks={modalBody}></BlockContent>
+        </Box>
       </MotionBox>
     </motion.div>
   )

@@ -6,7 +6,11 @@ import { CustomModal } from './CustomModal'
 import { AnimatePresence } from 'framer-motion'
 import { MotionCenter, MotionGrid } from '../../../../../../utils/animations'
 
-export const AnimatedTechButtons = () => {
+interface AnimatedTechButtonsProps {
+  project: any
+}
+
+export const AnimatedTechButtons: React.FC<AnimatedTechButtonsProps> = ({ project }) => {
   const [openModal, setOpenModal] = React.useState<string | null>(null)
   const [mobile] = useMediaQuery('(max-width: 400px)')
   const list = ['top-left', 'top-right', 'bottom-left', 'bottom-right']
@@ -28,6 +32,7 @@ export const AnimatedTechButtons = () => {
               animateLocation={item}
               setOpenModal={setOpenModal}
               index={idx}
+              project={project}
             ></AnimatedButton>
           ) : (
             <Box m={0} p={0} key={idx} h={mobile ? '100px' : '125px'}></Box>
@@ -36,7 +41,13 @@ export const AnimatedTechButtons = () => {
       </MotionGrid>
 
       <AnimatePresence>
-        {openModal && <CustomModal openModal={openModal} setOpenModal={setOpenModal}></CustomModal>}
+        {openModal && project && (
+          <CustomModal
+            openModal={openModal}
+            setOpenModal={setOpenModal}
+            project={project}
+          ></CustomModal>
+        )}
       </AnimatePresence>
     </MotionCenter>
   )

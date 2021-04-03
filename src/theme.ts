@@ -10,6 +10,15 @@ export const theme = extendTheme({
         bg: mode('myPlatinum.500', 'myDark.500')(props),
         lineHeight: 'base',
       },
+      h4: {
+        fontWeight: 'semibold',
+        fontSize: '16px',
+        margin: '.5rem 0rem',
+        color: 'gray.500',
+      },
+      p: {
+        textAlign: 'justify',
+      },
     }),
   },
 
