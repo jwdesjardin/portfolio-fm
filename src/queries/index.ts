@@ -7,7 +7,7 @@ const client = sanityClient({
 
 export async function getProjectData() {
   try {
-    const data = await client.fetch(`*[_type == "post" && slug.current == "nhl-stats-app"][0]{
+    const data = await client.fetch(`*[_type == "post" && slug.current == "portfolio-framer-motion"][0]{
       title,
       slug,
       githubLink,

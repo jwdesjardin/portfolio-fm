@@ -2,7 +2,6 @@ import * as React from 'react'
 import { Center, Circle, Text, useColorModeValue, useMediaQuery } from '@chakra-ui/react'
 import { KeyboardArrowDown } from '@material-ui/icons'
 import { motion } from 'framer-motion'
-import { Project } from '../../..'
 
 interface AnimatedButtonProps {
   index: number

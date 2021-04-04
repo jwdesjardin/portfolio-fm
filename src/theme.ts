@@ -16,6 +16,12 @@ export const theme = extendTheme({
         margin: '.5rem 0rem',
         color: 'gray.500',
       },
+      h1: {
+        fontWeight: 'bold',
+        fontSize: '22px',
+        margin: '.5rem 0rem',
+        color: 'gray.500',
+      },
       p: {
         textAlign: 'justify',
       },
