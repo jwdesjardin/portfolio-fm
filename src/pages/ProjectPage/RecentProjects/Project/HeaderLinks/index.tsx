@@ -5,7 +5,12 @@ import { motion } from 'framer-motion'
 import { shakeAnimation } from '../../../../../utils/animations'
 import { Link as RouterLink } from 'react-router-dom'
 
-export const HeaderLinks = () => {
+interface HeaderLinksProps {
+  demoLink: string
+  ghLink: string
+}
+
+export const HeaderLinks = ({ demoLink, ghLink }) => {
   const WebIcon = () => <Web style={{ fontSize: '2.2rem' }}></Web>
   const GithubIcon = () => <GitHub style={{ fontSize: '2.2rem' }}></GitHub>
 
@@ -18,7 +23,7 @@ export const HeaderLinks = () => {
 
       <HStack spacing={4}>
         {/* demo icon */}
-        <RouterLink to='/'>
+        <a target='_blank' rel='noreferrer' href={demoLink}>
           <MotionVStack
             spacing={0}
             whileHover={shakeAnimation}
@@ -30,10 +35,10 @@ export const HeaderLinks = () => {
             <WebIcon></WebIcon>
             <Text fontSize={13}>DEMO</Text>
           </MotionVStack>
-        </RouterLink>
+        </a>
 
         {/* github icon */}
-        <RouterLink to='/'>
+        <a target='_blank' rel='noreferrer' href={ghLink}>
           <MotionVStack
             spacing={0}
             whileHover={shakeAnimation}
@@ -45,7 +50,7 @@ export const HeaderLinks = () => {
             <GithubIcon></GithubIcon>
             <Text fontSize={13}>REPO</Text>
           </MotionVStack>
-        </RouterLink>
+        </a>
       </HStack>
     </Box>
   )

@@ -5,7 +5,11 @@ import { AnimatePresence, PanInfo } from 'framer-motion'
 import { MotionCircle, MotionImage } from '../../../../../utils/animations'
 import { wrap } from '@popmotion/popcorn'
 
-export const ImageSlideshow = () => {
+interface ImageSlideshowProps {
+  images: any[]
+}
+
+export const ImageSlideshow: React.FC<ImageSlideshowProps> = ({ images }) => {
   const variants = {
     enter: (direction: number) => ({
       x: direction > 0 ? 500 : -500,
@@ -29,7 +33,7 @@ export const ImageSlideshow = () => {
     },
   }
 
-  const imageSrc = ['/images/project1.png', '/images/project2.JPG', '/images/project3.jpg']
+  const imageSrc = images.map((image) => image.asset.url)
 
   const [[page, direction], setPage] = React.useState([0, 0])
 

@@ -2,15 +2,16 @@ import * as React from 'react'
 import { Box, VStack } from '@chakra-ui/react'
 import { SectionHeader } from '../../../utils/layout/SectionHeader'
 import { Project } from './Project'
-import { getProjectData } from '../../../queries'
+import { getProjectsData } from '../../../queries'
 
 export const RecentProjects = () => {
   // bring in project data
 
-  const [project, setProject] = React.useState()
+  const [projects, setProjects] = React.useState([])
 
+  // this is where project data will be brought in from the backend
   React.useEffect(() => {
-    getProjectData().then((data) => setProject(data))
+    getProjectsData().then((data) => setProjects(data))
   }, [])
 
   return (
@@ -19,11 +20,7 @@ export const RecentProjects = () => {
       <VStack spacing={20}>
         <SectionHeader>Recent Projects</SectionHeader>
 
-        {/* this is where project data will be brought in from the backend */}
-
-        <Project project={project}></Project>
-        <Project project={project}></Project>
-        <Project project={project}></Project>
+        {projects && projects.map((project) => <Project project={project}></Project>)}
       </VStack>
     </Box>
   )

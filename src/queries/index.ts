@@ -5,9 +5,9 @@ const client = sanityClient({
   dataset: 'production',
 })
 
-export async function getProjectData() {
+export async function getProjectsData() {
   try {
-    const data = await client.fetch(`*[_type == "post" && slug.current == "portfolio-framer-motion"][0]{
+    const data = await client.fetch(`*[_type == "post"]{
       title,
       slug,
       githubLink,
