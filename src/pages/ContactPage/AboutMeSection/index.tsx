@@ -12,27 +12,33 @@ export const AboutMeSection = () => (
 
       <Box fontSize={16} lineHeight='1.7'>
         <p style={{ textIndent: '2rem', margin: '1.5rem 0' }}>
-          I would consider myself a self taught programmer. I have found that by following my own
-          intellectual curiosity and by building the things that i find interesting i have been able
-          to learn a lot about how to build web applications.
+          I consider myself a self taught programmer. I chose to take advantage of the online
+          resources available to me and to learn at my own pace. I have found this to be a very
+          exciting way to learn and that by following my own curiosity and by building projects that
+          I am interested in I have been able to learn a lot about how to build a quality web
+          application.
         </p>
         <p style={{ textIndent: '2rem', margin: '1.5rem 0' }}>
-          I do have work experience prior to learning to program. I was a retail manager with
-          Nordstrom for the last five years among other jobs. There i got the opportunity to strech
-          out and learn a lot in the business world. I got to do a lot of cool stuff in this job I
-          was continuing to move up to more challenging postions but i decided to leave my postion
-          in 2020 because i felt like it was a good move for myself to pick a career that would
-          align with my passions and leave me feeling maximum fulfillment. Since then programming
-          has proven to be a great creative outlet for me, It has given me a great framework to pick
-          apart and sovle problems and it keeps me excited to learn something new each day. I am
-          very happy with the decision to follow my passions and only want to continue learning.
+          I do have work experience prior to learning to program. Most recently I was a people
+          manager with a popular retail store. In this position I was able to gain a lot of business
+          as well as people skills and also learn a lot aboout the retail, sales, and coorporate
+          world. I really enjoyed this job and was continuing to get opportunities to take on more
+          challenging postions but I decided to leave my postion in 2020 because I felt like it was
+          going to be a great move in the long run for me to restart in a career that would align
+          with my passions and leave me feeling maximum fulfillment from my work. Since then
+          programming has proven to be a great fit for me in many ways. Programming is a great
+          creative outlet for me, It has given me a great framework to pick apart and solve problems
+          and it keeps me excited to learn something new each day. I am very happy with the decision
+          to follow my passions and only want to continue learning.
         </p>
         <p style={{ textIndent: '2rem', margin: '1.5rem 0' }}>
-          When teaching myself new programming skills I use various resources across the internet. I
-          use tutorials if I want to get into a new subject I have no familiarity with. I use the
-          Documentation that is often provided for major projects to remeber how things work
-          together. I also read code often on Github to see how someone else has solved the same
-          problem that I have.{' '}
+          When teaching myself new programming skills I use all the resoureces that are available to
+          me but there are a few methods that are most notable. I use video tutorials if I want to
+          get into a new subject I have no familiarity with. I use the documentation that is often
+          provided by the developers for major projects to really get to know a subject deeper or as
+          a quick refrence when programming. I also find it important to read code from real life
+          projects, most often on Github, to see how someone else has solved the same problem that I
+          have or just to get a feel for what else is out there in the world of code .
         </p>
       </Box>
     </Box>
@@ -44,60 +50,47 @@ export const AboutMeSection = () => (
 
       <Box fontSize={16} lineHeight='1.7'>
         <p style={{ textIndent: '2rem', margin: '1.5rem 0' }}>
-          In between taking tutorials and learning new topics i took breaks and built projects on my
-          own without using anything other than documention and the internet to get through any
-          errors or problems i faced.
+          In between learning new topics I took breaks and build projects on my own without using
+          anything other outside resources other than documention or internet searches to get
+          through any errors or bugs I face.
         </p>
         <p style={{ textIndent: '2rem', margin: '1.5rem 0' }}>
-          My earliest projects that are shown on this portfolio are from the treehouse techdegree
-          that i did. These projects mostly focused on using the basics of javascript. Then they
-          moved on to the basics of Node.js and Express and the Sequalize ORM to create a server and
-          database and the moved on to the basics of React all culminating in a final project that
-          was a full-stack React project allowing full CRUD support to the user. These projects gave
-          me confindence to build things and share my work with other sutdents that were also
-          learning. These projects gave me an opportunity to solve bugs on my own and even solve the
-          bugs of classmates.
+          My earliest projects that are shown on this portfolio are from the Treehouse Techdegree
+          that I completed in 2020. The first of these projects focus on the basics of JavaScript.
+          Then they move on to the basics of Node.js and Express and the Sequalize ORM to create
+          servers, REST APIs and SQL databases. The last projects brought React in to the toolbox to
+          create a full-stack project allowing full CRUD support to the user. These projects took me
+          from just knowing about code to having the confindence to build things and share my work
+          with other students. I also got the opportunity to solve bugs in projects of growing
+          complexity and even solve the bugs of classmates.
         </p>
         <p style={{ textIndent: '2rem', margin: '1.5rem 0' }}>
-          The next projects was my first set of Full Stack Projects. These projects were focused
-          around learning on my own without the use of tutorials. I learned a lot a lot about how to
-          create a project on my own. I learned about styling proejcts and learned and tested a lot
-          of different CSS systems like SASS, CSS Modules, Styled Components. I learned different
-          state management libraries like redux and the context API. I also learned delpoyment the
-          difference between delpoyng a react app vs fullstack app with a server or a database. I
-          also learned Next.js and how to generate static pages using this framework. At the end of
-          this i felt the confidence of being able to build things with mastery being able to adjust
-          things to the pixel and get things exaclty as i want it.
+          The next group of projects I created in this portfolio was what I call my first set of
+          full-stack projects. This was my Spotify API App, my Ecommerce App and V1 of my portfolio.
+          These projects were completed after graduation from the Treehouse Tech-Degree program and
+          were focused around learning on my own without the use of tutorials or courses. I learned
+          a lot a lot about how to create a project on my own. I learned about styling projects and
+          using different CSS systems like SASS, CSS Modules and Styled Components. I learned
+          different state management libraries and used Redux as well as the Context API in
+          projects. I also learned about deployment the different complexities of delpoying a React
+          app vs full-stack app with a server or a database. I also worked with Next.js utilizing
+          the static site generation feature of this framework. At the end of these projects I felt
+          a lot confidence of being able to build real world applications on my own but I still
+          wanted to take my coding workflow to the next level.
         </p>
         <p style={{ textIndent: '2rem', margin: '1.5rem 0' }}>
-          The last group of projects that i did were Typescript projects. I continued to build upon
-          my planning skills and began using the Framer app to mockup each project. I settled on
-          using Chakra UI library to create my UI and have been really enjoying a lot of the
-          shortcuts that it offers. I have used Typescript in all of these projects and love it. I
-          learned to decalre my own types, to use interfaces for react components also reading type
-          def files and using them in the code editor keeps me from needing to go the Docs as much.
-          My project organization was a focus of these projects as well using High Order Components
-          to DRY up my code. I learned the animations framework Framer Motion to add animations
-          ranging from simple fade-ins on the react-router components to a gesture on hover or click
-          or animating the apperace of modals and slideshow images.
-        </p>
-      </Box>
-    </Box>
-    {/* goals interests */}
-    <Box w='100%'>
-      <Box w='100%' mb='4rem'>
-        <SectionHeader>Goals / Interests</SectionHeader>
-      </Box>
-
-      <Box fontSize={16} lineHeight='1.7'>
-        <p style={{ textIndent: '2rem', margin: '3rem 0' }}>
-          I want to continue to learn new technologies. If no one told me what to learn next i would
-          probably go towards mobile app maybe using something like react Native if not Swift or
-          Kotlin. I would probably also continue to learn about servers and hosting and deployment.
-          Maybe even pick up a new backend language. In addition to this i want to continute to
-          develop my problem solving skills. I enjoy being able to solve more and more challenging
-          problems. I also really enjoy the planning / architecting of projects. In the long term i
-          would love to be able to build understand the architecture of all types of software.
+          The most recent group of projects that I completed were my Typescript projects. In these
+          projects I focused on imporving my coding workflow by adding the use of Typescript as well
+          as a consistent UI libarry and mockup service for all the projects. For a mockup service I
+          used the Framer.com app to mockup each project that I did and this was a huge game changer
+          in making the development process much smoother. For a UI library I chose to use the
+          Chakra library and have been really enjoying a lot of the shortcuts that it offers. Using
+          TypeScript, I learned to decalre my own types, to use interfaces for React components also
+          reading type definition files of projects that I install from npm. Typescript all around
+          catches more errors, allows me to develop features quicker and allows me to learn more
+          about third party libaries while staying in my code editor. My projects became more
+          organized in this group of projects and I was able to start writing better components that
+          could be reused throughout the project to DRY up my code.
         </p>
       </Box>
     </Box>
