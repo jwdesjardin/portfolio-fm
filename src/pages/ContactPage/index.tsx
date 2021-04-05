@@ -1,13 +1,5 @@
 import * as React from 'react'
-import {
-  Text,
-  Container,
-  Heading,
-  Image,
-  Center,
-  VStack,
-  useColorModeValue,
-} from '@chakra-ui/react'
+import { Text, Container, Heading, Image, Center, useColorModeValue } from '@chakra-ui/react'
 
 import { AboutMeSection } from './AboutMeSection'
 import { ContactLinks } from './ContactLinks'

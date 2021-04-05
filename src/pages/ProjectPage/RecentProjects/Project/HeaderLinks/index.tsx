@@ -3,14 +3,13 @@ import { Box, HStack, Text, VStack } from '@chakra-ui/react'
 import { GitHub, Web } from '@material-ui/icons'
 import { motion } from 'framer-motion'
 import { shakeAnimation } from '../../../../../utils/animations'
-import { Link as RouterLink } from 'react-router-dom'
 
 interface HeaderLinksProps {
   demoLink: string
   ghLink: string
 }
 
-export const HeaderLinks = ({ demoLink, ghLink }) => {
+export const HeaderLinks: React.FC<HeaderLinksProps> = ({ demoLink, ghLink }) => {
   const WebIcon = () => <Web style={{ fontSize: '2.2rem' }}></Web>
   const GithubIcon = () => <GitHub style={{ fontSize: '2.2rem' }}></GitHub>
 
