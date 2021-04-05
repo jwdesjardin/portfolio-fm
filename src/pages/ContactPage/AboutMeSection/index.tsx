@@ -11,14 +11,14 @@ export const AboutMeSection = () => (
       </Box>
 
       <Box fontSize={16} lineHeight='1.7'>
-        <p style={{ textIndent: '2rem', margin: '1.5rem 0' }}>
+        <p style={{ textIndent: '2rem', margin: '1.5rem 0', textAlign: 'justify' }}>
           I consider myself a self taught programmer. I chose to take advantage of the online
           resources available to me and to learn at my own pace. I have found this to be a very
           exciting way to learn and that by following my own curiosity and by building projects that
           I am interested in I have been able to learn a lot about how to build a quality web
           application.
         </p>
-        <p style={{ textIndent: '2rem', margin: '1.5rem 0' }}>
+        <p style={{ textIndent: '2rem', margin: '1.5rem 0', textAlign: 'justify' }}>
           I do have work experience prior to learning to program. Most recently I was a people
           manager with a popular retail store. In this position I was able to gain a lot of business
           as well as people skills and also learn a lot aboout the retail, sales, and coorporate
@@ -31,7 +31,7 @@ export const AboutMeSection = () => (
           and it keeps me excited to learn something new each day. I am very happy with the decision
           to follow my passions and only want to continue learning.
         </p>
-        <p style={{ textIndent: '2rem', margin: '1.5rem 0' }}>
+        <p style={{ textIndent: '2rem', margin: '1.5rem 0', textAlign: 'justify' }}>
           When teaching myself new programming skills I use all the resoureces that are available to
           me but there are a few methods that are most notable. I use video tutorials if I want to
           get into a new subject I have no familiarity with. I use the documentation that is often
@@ -49,12 +49,12 @@ export const AboutMeSection = () => (
       </Box>
 
       <Box fontSize={16} lineHeight='1.7'>
-        <p style={{ textIndent: '2rem', margin: '1.5rem 0' }}>
+        <p style={{ textIndent: '2rem', margin: '1.5rem 0', textAlign: 'justify' }}>
           In between learning new topics I took breaks and build projects on my own without using
           anything other outside resources other than documention or internet searches to get
           through any errors or bugs I face.
         </p>
-        <p style={{ textIndent: '2rem', margin: '1.5rem 0' }}>
+        <p style={{ textIndent: '2rem', margin: '1.5rem 0', textAlign: 'justify' }}>
           My earliest projects that are shown on this portfolio are from the Treehouse Techdegree
           that I completed in 2020. The first of these projects focus on the basics of JavaScript.
           Then they move on to the basics of Node.js and Express and the Sequalize ORM to create
@@ -64,7 +64,7 @@ export const AboutMeSection = () => (
           with other students. I also got the opportunity to solve bugs in projects of growing
           complexity and even solve the bugs of classmates.
         </p>
-        <p style={{ textIndent: '2rem', margin: '1.5rem 0' }}>
+        <p style={{ textIndent: '2rem', margin: '1.5rem 0', textAlign: 'justify' }}>
           The next group of projects I created in this portfolio was what I call my first set of
           full-stack projects. This was my Spotify API App, my Ecommerce App and V1 of my portfolio.
           These projects were completed after graduation from the Treehouse Tech-Degree program and
@@ -78,7 +78,7 @@ export const AboutMeSection = () => (
           a lot confidence of being able to build real world applications on my own but I still
           wanted to take my coding workflow to the next level.
         </p>
-        <p style={{ textIndent: '2rem', margin: '1.5rem 0' }}>
+        <p style={{ textIndent: '2rem', margin: '1.5rem 0', textAlign: 'justify' }}>
           The most recent group of projects that I completed were my Typescript projects. In these
           projects I focused on imporving my coding workflow by adding the use of Typescript as well
           as a consistent UI libarry and mockup service for all the projects. For a mockup service I

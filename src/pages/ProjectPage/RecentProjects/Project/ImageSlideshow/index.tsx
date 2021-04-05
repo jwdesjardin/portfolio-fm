@@ -74,7 +74,7 @@ export const ImageSlideshow: React.FC<ImageSlideshowProps> = ({ images }) => {
 
       {/* image */}
 
-      <Center h='250px' maxW='450px' flexDirection='column'>
+      <Center h='250px' w={mobile ? '100%' : '450px'} flexDirection='column'>
         <AnimatePresence exitBeforeEnter custom={direction}>
           <MotionImage
             key={page}

@@ -28,14 +28,14 @@ export const theme = extendTheme({
   colors: {
     myDark: {
       // dark-blue-black
-      // 500: '#020c12',
-      500: '#121416',
+      500: '#020c12',
+      // 500: '#121416',
     },
     myWhite: {
       500: '#Fdfffc',
     },
     myPlatinum: {
-      500: '#eaebeb',
+      500: '#eef5fc',
     },
     myBlue: {
       500: '#1090f9',
