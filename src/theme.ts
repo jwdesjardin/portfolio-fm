@@ -22,9 +22,6 @@ export const theme = extendTheme({
         margin: '.5rem 0rem',
         color: 'gray.500',
       },
-      p: {
-        textAlign: 'justify',
-      },
     }),
   },
 

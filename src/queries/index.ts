@@ -7,13 +7,14 @@ const client = sanityClient({
 
 export async function getProjectsData() {
   try {
-    const data = await client.fetch(`*[_type == "post"]{
+    const data = await client.fetch(`*[_type == "post"] | order(date desc){
       title,
       slug,
       githubLink,
       liveDemoLink,
       description,
       publishedMonth,
+      date,
       images[]{
             asset->{
               _id, url
