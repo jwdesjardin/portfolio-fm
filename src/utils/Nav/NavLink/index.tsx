@@ -11,7 +11,7 @@ const linkVariants = {
 
 export const NavLink: React.FC = ({ children }) => {
   const { colorMode } = useColorMode()
-  const [mobile] = useMediaQuery('(max-width: 400px)')
+  const [mobile] = useMediaQuery('(max-width: 450px)')
   return (
     <MotionBox
       fontWeight='bold'

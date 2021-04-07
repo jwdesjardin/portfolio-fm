@@ -57,7 +57,7 @@ export const ImageSlideshow: React.FC<ImageSlideshowProps> = ({ images }) => {
 
   const arrowBg = useColorModeValue('rgba(0,0,0,.3)', 'rgba(0,0,0,.3)')
 
-  const [mobile] = useMediaQuery('(max-width: 400px)')
+  const [mobile] = useMediaQuery('(max-width: 450px)')
 
   return (
     <Box w='100%' d='flex' justifyContent='space-evenly' alignItems='center'>

@@ -32,7 +32,7 @@ export const AnimatedButton: React.FC<AnimatedButtonProps> = ({
 
   const circleBg = useColorModeValue('myDark.500', 'myWhite.500')
   const circleColor = useColorModeValue('myWhite.500', 'myDark.500')
-  const [mobile] = useMediaQuery('(max-width: 400px)')
+  const [mobile] = useMediaQuery('(max-width: 450px)')
 
   const getButtonTitle = (index: number) => {
     if (project) {

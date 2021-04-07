@@ -4,7 +4,7 @@ import { GreetingText } from './GreetingText'
 import { MotionBox } from '../../../utils/animations'
 
 export const Greeting = () => {
-  const [mobile] = useMediaQuery('(max-width: 400px)')
+  const [mobile] = useMediaQuery('(max-width: 450px)')
   return (
     <Box h='100vh' d='flex' flexDirection='column' alignContent='center' justifyContent='center'>
       <MotionBox

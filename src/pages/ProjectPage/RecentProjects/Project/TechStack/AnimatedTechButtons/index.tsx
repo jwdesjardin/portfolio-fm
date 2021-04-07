@@ -12,7 +12,7 @@ interface AnimatedTechButtonsProps {
 
 export const AnimatedTechButtons: React.FC<AnimatedTechButtonsProps> = ({ project }) => {
   const [openModal, setOpenModal] = React.useState<string | null>(null)
-  const [mobile] = useMediaQuery('(max-width: 400px)')
+  const [mobile] = useMediaQuery('(max-width: 450px)')
   const list = ['top-left', 'top-right', 'bottom-left', 'bottom-right']
 
   return (

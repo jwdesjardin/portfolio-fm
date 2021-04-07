@@ -36,7 +36,7 @@ export const Nav = () => {
     closed: { opacity: 0, x: -100 },
   }
 
-  const [mobile] = useMediaQuery('(max-width: 400px)')
+  const [mobile] = useMediaQuery('(max-width: 450px)')
   const bg = useColorModeValue('myDark.500', 'myPlatinum.500')
 
   return (
