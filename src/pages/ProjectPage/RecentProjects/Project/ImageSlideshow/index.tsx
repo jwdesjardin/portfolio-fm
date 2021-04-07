@@ -47,9 +47,10 @@ export const ImageSlideshow: React.FC<ImageSlideshowProps> = ({ images }) => {
     e: MouseEvent | TouchEvent | PointerEvent,
     { offset, velocity }: PanInfo
   ) => {
-    if (offset.x > 400) {
+    console.log(offset.x)
+    if (offset.x > 150) {
       paginate(-1)
-    } else if (offset.x < -400) {
+    } else if (offset.x < -150) {
       paginate(1)
     }
   }

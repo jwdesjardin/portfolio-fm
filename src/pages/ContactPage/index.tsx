@@ -53,7 +53,7 @@ export const ContactPage = () => {
 
         <AboutMeSection></AboutMeSection>
 
-        <Center mt='10rem'>
+        <Center mt='5rem'>
           <Image borderRadius='md' w='35%' minW='250px' src='/images/profile-pic.jpg'></Image>
         </Center>
 

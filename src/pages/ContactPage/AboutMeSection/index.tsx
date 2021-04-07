@@ -3,7 +3,7 @@ import { Box, VStack } from '@chakra-ui/react'
 import { SectionHeader } from '../../../utils/layout/SectionHeader'
 
 export const AboutMeSection = () => (
-  <VStack spacing='10rem'>
+  <VStack spacing='5rem'>
     {/* education */}
     <Box w='100%'>
       <Box w='100%' mb='4rem'>

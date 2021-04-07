@@ -53,6 +53,23 @@ export const Nav = () => {
         <Menu onClick={() => setIsToggled(!isToggled)}></Menu>
       </MotionCenter>
 
+      {/* overlay */}
+      <AnimatePresence>
+        {isToggled && (
+          <MotionBox
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            position='absolute'
+            bg='rgba(0,0,0,.2)'
+            h='100vh'
+            w='100vw'
+            zIndex='2000'
+            onClick={() => setIsToggled(false)}
+          />
+        )}
+      </AnimatePresence>
+
       {/* dropdown */}
       <AnimatePresence>
         {isToggled && (
@@ -70,9 +87,15 @@ export const Nav = () => {
             flexWrap='wrap'
             bg={bg}
             ml={2}
+            zIndex='10000'
           >
             <RouterLink to='/#home'>
-              <MotionBox variants={linksVariants} color='myBlue.500' key={5}>
+              <MotionBox
+                variants={linksVariants}
+                color='myBlue.500'
+                key={5}
+                onClick={() => setIsToggled(false)}
+              >
                 <NavLink>
                   <Home style={{ marginRight: '1rem' }}></Home>
                   Home
@@ -81,7 +104,12 @@ export const Nav = () => {
             </RouterLink>
 
             <RouterLink to='/#projects'>
-              <MotionBox variants={linksVariants} color='myPurple.500' key={2}>
+              <MotionBox
+                variants={linksVariants}
+                color='myPurple.500'
+                key={2}
+                onClick={() => setIsToggled(false)}
+              >
                 <NavLink>
                   <Web style={{ marginRight: '1rem' }}></Web>
                   Projects
@@ -90,7 +118,12 @@ export const Nav = () => {
             </RouterLink>
 
             <RouterLink to='/contact#about'>
-              <MotionBox variants={linksVariants} color='myOrange.500' key={3}>
+              <MotionBox
+                variants={linksVariants}
+                color='myOrange.500'
+                key={3}
+                onClick={() => setIsToggled(false)}
+              >
                 <NavLink>
                   <AccountCircle style={{ marginRight: '1rem' }}></AccountCircle>
                   About Me
@@ -99,7 +132,12 @@ export const Nav = () => {
             </RouterLink>
 
             <RouterLink to='/contact#links'>
-              <MotionBox variants={linksVariants} color='myGreen.500' key={4}>
+              <MotionBox
+                variants={linksVariants}
+                color='myGreen.500'
+                key={4}
+                onClick={() => setIsToggled(false)}
+              >
                 <NavLink>
                   <Email style={{ marginRight: '1rem' }}></Email>
                   Contact

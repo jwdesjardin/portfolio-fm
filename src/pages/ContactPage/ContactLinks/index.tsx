@@ -13,7 +13,7 @@ export const ContactLinks = () => (
       </Heading>
 
       <Box w='80%'>
-        <RouterLink to=''>
+        <RouterLink to='https://github.com/jwdesjardin'>
           <MotionBox d='flex' justifyContent='center' alignItems='center' my='2rem'>
             <MotionBox whileHover={{ ...shakeAnimation, color: '#333' }}>
               <GitHub style={{ fontSize: '2.5rem' }}></GitHub>
@@ -23,7 +23,7 @@ export const ContactLinks = () => (
             </Text>
           </MotionBox>
         </RouterLink>
-        <RouterLink to=''>
+        <RouterLink to='mailto:jwdesjardin@gmail.com'>
           <MotionBox d='flex' justifyContent='center' alignItems='center' my='2rem'>
             <MotionBox whileHover={{ ...shakeAnimation, color: '#ff9f1c' }}>
               <Email style={{ fontSize: '2.5rem' }}></Email>
@@ -33,7 +33,7 @@ export const ContactLinks = () => (
             </Text>
           </MotionBox>
         </RouterLink>
-        <RouterLink to=''>
+        <RouterLink to='www.linkedin.com/in/joey-desjardin'>
           <MotionBox d='flex' justifyContent='center' alignItems='center' my='2rem'>
             <MotionBox whileHover={{ ...shakeAnimation, color: '#2867B2' }}>
               <LinkedIn style={{ fontSize: '2.5rem' }}></LinkedIn>
@@ -43,7 +43,7 @@ export const ContactLinks = () => (
             </Text>
           </MotionBox>
         </RouterLink>
-        <RouterLink to=''>
+        <RouterLink to='https://twitter.com/joey_desjardin'>
           <MotionBox d='flex' justifyContent='center' alignItems='center' my='2rem'>
             <MotionBox whileHover={{ ...shakeAnimation, color: '#1DA1F2' }}>
               <Twitter style={{ fontSize: '2.5rem' }}></Twitter>

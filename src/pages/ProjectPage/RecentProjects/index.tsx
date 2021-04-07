@@ -20,7 +20,8 @@ export const RecentProjects = () => {
       <VStack spacing={20}>
         <SectionHeader>Recent Projects</SectionHeader>
 
-        {projects && projects.map((project) => <Project project={project}></Project>)}
+        {projects &&
+          projects.map((project, idx) => <Project key={idx} project={project}></Project>)}
       </VStack>
     </Box>
   )

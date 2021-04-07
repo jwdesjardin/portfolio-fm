@@ -15,7 +15,9 @@ export const Project: React.FC<ProjectProps> = ({ project }) => {
     <Box>
       {/* project title */}
       <Box d='flex' color={titleColor} justifyContent='center' m='2rem'>
-        <Heading fontSize='2.2rem'>{project.title}</Heading>
+        <Heading fontSize='2.2rem' textAlign='center'>
+          {project.title}
+        </Heading>
       </Box>
 
       {/* project description */}
